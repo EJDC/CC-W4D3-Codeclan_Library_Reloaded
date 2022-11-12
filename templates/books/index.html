@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Book List</h2>
+<div class="book-container">
+  {% for book in all_books %}  
+    <div class="book">
+      <header class="book-header"><a href="books/{{book.id}}"> {{ book.title }} </a></header>
+      <article class="book-info">
+      Author:&nbsp;&nbsp;{{ book.author.first_name }} {{ book.author.last_name }}  <br>
+      Genre:&nbsp;&nbsp;{{ book.genre}} <br>
+      </article>
+      {% if book.checked_out %}
+      <aside class="aside book-checked-out">&#9201;  Checked Out!</aside>
+      <aside class="aside book-checked-out-options">
+        <form class="check-in" action="/books/check_in/{{  book.id  }}" method="post">
+          <input type="submit" value="Return Book">
+        </form>
+      </aside>
+      {% else %}
+      <aside class="aside book-checked-out">&#9989;  Available</aside>
+      <aside class="aside book-checked-out-options">
+        <form class="check-out" action="/books/check_out/{{ book.id }}" method="post">
+        <input type="submit" value="Checkout Book"></form>
+      </aside>
+      {% endif %}
+      <footer class="book-footer">
+      <form class="delete" action="/books/{{ book.id }}/delete" method="post">
+      <input type="submit" value="Delete Book">
+      </form>
+      </footer>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

@@ -1,0 +1,187 @@
+
+body {
+    background-color: #e1b382;
+    color: #12343b;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* padding: 1.5rem; */
+    text-align: center;
+}
+
+.menu{
+    display: flex;
+    padding: 10px;
+    background-color: #e1b382;
+    color: #2d545e;
+    justify-content: center;
+  }
+  
+  .menu li a{
+    text-decoration: none;
+    color: #12343b;
+  }
+  
+  .menu li a:visited{
+    color: #2d545e;
+  }
+  
+  .menu li{
+    padding-right: 10px;
+    list-style: none;
+    color: #2d545e;
+  }
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.book {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    padding: 0.7rem;
+}
+
+.book-header > a {
+    color: white;
+    font-size: large;
+    text-decoration:none
+}
+
+.book-header {
+    color: white;
+    font-size: large;
+    text-decoration:none
+}
+
+.book-header > a:hover {
+    color: #c89666;
+    font-size: large;
+    text-decoration:underline
+}
+
+h1 {
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.book > * {
+    padding: 0.5rem;
+    flex: 1 100%;
+}
+
+.book-header {
+    background-color: #12343b;
+}
+
+.book-info {
+    background-color: #c89666;
+    text-align: center;
+}
+
+.book-checked-out {
+    background-color: #2d545e;
+    color: white
+}
+
+.book-checked-out-options {
+    background-color: #2d545e;
+}
+
+.book-footer {
+    background-color: #12343b;
+}
+
+.check-in input[type=submit] {
+    transition-duration: 0.4s;
+    background-color: green;
+    color: white;
+    padding: 6px 15px;
+}
+
+.check-in input[type=submit]:hover {
+    background-color: white;
+    color: black;
+}
+
+.check-out input[type=submit] {
+    transition-duration: 0.4s;
+    background-color: white;
+    padding: 6px 15px;
+}
+
+.check-out input[type=submit]:hover {
+    background-color: green;
+    color: white;
+}
+
+.delete input[type=submit] {
+    transition-duration: 0.4s;
+    background-color: white;
+    /* color: green; */
+}
+
+.delete input[type=submit]:hover {
+    background-color: red;
+    color: white;
+}
+
+.form-wrapper {
+    background-color: #c89666;
+    list-style-type: none;
+    padding: 0.7rem;
+  }
+  .form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.2rem;
+  }
+
+  .form-row > label {
+    padding: 0.5rem 1rem 0.5rem 0;
+    flex: 1;
+  }
+  .form-row > input {
+    flex: 2;
+  }
+  .form-row > input,
+  .form-row > button {
+    padding: 0.5rem;
+  }
+  .form-row > button {
+   background: #12343b;
+   color: white;
+   border: 0;
+   transition-duration: 0.4s;
+  }
+
+  .form-row > button:hover {
+    background-color: green;
+    color: white;
+  }
+
+  .form-row > textarea {
+    flex: 2;
+    min-height: 4rem;
+    padding: 0.5rem;
+  }
+
+  .form-row > select {
+    flex: 2;
+    padding: 0.5rem;
+  }
+
+@media all and (min-width: 600px) {
+    .aside {flex: 1 0 0;}
+}
+
+@media all and (min-width: 800px) {
+    .book-info {flex: 3 0px;}
+    .book-checked-out {order: 1; }
+    .book-info {order: 2; }
+    .book-checked-out-options {order: 3; }
+    .book-footer {order: 4; }
+}

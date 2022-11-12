@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create New Book</h2>
+<form class="add_book" action="/books" method="post">
+  <ul class="form-wrapper">
+    <li class="form-row">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" required autofocus>
+    </li>
+    <li class="form-row">
+        <label for="author">Author:</label>
+        <select id="author" name="author_id">
+          {% for author in all_authors %}
+            <option value="{{ author.id }}"> {{ author.first_name }} {{ author.last_name }} </option>
+          {% endfor %}
+        </select>
+    </li>
+    <li class="form-row">
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" id="genre" required autofocus>
+    </li>
+    <li class="form-row">
+      <label for="description">Description</label>
+      <textarea name="description" id="description"></textarea>
+    <li class="form-row">
+      <label for="checked_out">Checked Out?</label>
+      <select id="checked_out" name="checked_out">
+        <option value=True>True</option>
+        <option value=False>False</option>
+    </select>
+    </li>
+    <li class="form-row">
+      <button class="add-book-button" type="submit">Add Book</button>
+    </li>
+  </ul>
+</form>
+
+<!-- 
+
+
+
+<form action="/books" method="post">
+<div>
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required autofocus>
+</div>
+
+<div>
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="description" required autofocus>
+</div>
+
+<div>
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" required autofocus>
+</div>
+
+<div>
+  <label for="checked_out">Checked Out?:</label>
+  <select id="checked_out" name="checked_out">
+      <option value=True>True</option>
+      <option value=False>False</option>
+  </select>
+</div>
+
+<div>
+  <label for="author">Author:</label>
+  <select id="author" name="author_id">
+    {% for author in all_authors %}
+      <option value="{{ author.id }}"> {{ author.first_name }} </option>
+    {% endfor %}
+  </select>
+</div>
+
+  <button type="submit">Add book</button>
+
+</form> -->
+{% endblock %}
